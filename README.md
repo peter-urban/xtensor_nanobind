@@ -1,22 +1,22 @@
 # xtensor_nanobind
 
-**Nanobind bindings for an xtensor/NumPy-compatible `pytensor`, supporting efficient in-place NumPy array operations.**
+**Nanobind bindings for an xtensor/NumPy-compatible `pytensor`, supporting in-place NumPy array operations using xtensor.**
 
 ---
 
 ### ⚙️ Overview
-`xtensor_nanobind` provides lightweight C++20 header-only bindings that integrate **xtensor**, **NumPy**, and **PyTensor** through **nanobind**.  
-It enables **high-performance**, **in-place** operations on NumPy arrays from C++, while maintaining seamless interoperability between C++ and Python.
+`xtensor_nanobind` provides lightweight C++20 header-only nanobind bindings that allow for inplace operations on numpy arrays using xtensr,
+This code was derived with assistance from ChatGPT-5 Codex, using xtensor-python's pytensor.hpp, pycontainer.hpp, and related components as example.  *
 
----
 
 ### 🧠 Note
-This file was initially drafted with the assistance of *ChatGPT5-Codex* and may contain minor AI-generated phrasing.
+This file was initially drafted with the assistance of *ChatGPT5-Codex* and may contain AI-generated phrasing. 
+The pytensor class may still not support all xtensor features or may show some performance issues. Let me know if you detect any issues.
 
 ---
 
 ### 📦 Installation
-This library is **header-only** — simply download the header file and include it in your nanobind module.
+This is a **header-only** project. Download the header file and include it in your nanobind module.
 
 **Requirements:**
 - C++20 compiler  
@@ -25,20 +25,16 @@ This library is **header-only** — simply download the header file and include 
 ---
 
 ### 🚀 Usage
-Include the header in your C++ project to use the `pytensor` class for efficient C++ ↔ Python data exchange through nanobind.
 
-**Features:**
 - **`pytensor` class** — compatible with `xt::xtensor`, allowing **NumPy array access by reference** for **in-place** operations and zero-copy performance.  
   *(Namespace: `xt::nanobind::pytensor`)*
 - **Type casters** for:
   - `xt::xtensor` — provides automatic data conversion (copy/move semantics)
-  - `pytensor` expressions — supports efficient in-place and reference-based interaction with NumPy arrays
+  - `pytensor` expressions — supports in-place and reference-based interaction with NumPy arrays
 
 ---
 
-### 🧩 Quick Example
-
-#### C++: Create a nanobind module using `pytensor`
+### 🧩 Example
 
 ```cpp
 #include <nanobind/nanobind.h>
