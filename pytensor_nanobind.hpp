@@ -61,9 +61,6 @@
 
 #pragma once
 
-/* generated doc strings */
-#include ".docstrings/pytensor_nanobind.doc.hpp"
-
 #include <algorithm>
 #include <array>
 #include <cstddef>
